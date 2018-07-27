@@ -8,12 +8,14 @@
 // Import custom variables
 @import 'assets/scss/variables.scss';
 
-// OVERRIDE VARIABLES HERE
-$blue: #0055aa;
-
 // Derived variables
 $primary: $blue;
 $primary-invert: findColorInvert($primary);
+$secondary: $red;
+$secondary-invert: findColorInvert($secondary);
+
+$red-compliant: $red-AA-compliant;
+$red-compliant-invert: findColorInvert($primary);
 
 // Social colors
 $twitter: #2fa4f0;
@@ -21,13 +23,35 @@ $twitter-invert: findColorInvert($twitter);
 $facebook: #3e5c98;
 $facebook-invert: findColorInvert($facebook);
 
+// General Colors
+$background: $light;
+$text: $dark;
+$text-light: $light;
+$border: $dark;
+$border-hover: black;
+
+// Override typography variables
+$title-size: $size-1;
+
+// Radius used on buttons and tags
+$radius: 0;
+
 // Add new color variables to the color map to use as bulma classes (e.g. 'is-twitter')
 $addColors: (
+  "dark": ($dark, $light),
+  "light": ($light, $dark),
   "primary": ($primary, $primary-invert),
+  "secondary": ($secondary, $secondary-invert),
+  "red-compliant": ($red-compliant, $red-compliant-invert),
   "twitter": ($twitter, $twitter-invert),
   "facebook": ($facebook, $facebook-invert)
 );
 $colors: map-merge($colors, $addColors);
+
+// Link colors
+$link: $dark;
+$link-hover: $grey-60;
+$link-focus: $grey-60;
 
 // Import rest of Bulma
 @import "node_modules/bulma/bulma";
