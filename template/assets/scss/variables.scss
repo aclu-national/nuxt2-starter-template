@@ -2,27 +2,6 @@
  ** SCSS variables
  **/
 
-// FONTS
-$normal: 400;
-$bold: 700;
-
-// COLORS
-$aclublue: #0055aa; // official blue
-$aclured: #ef404e; // official red
-$aclured-AA-compliant: #D93A3F; // WCAG AA compliant w/ white text
-
-$dark: #231F20;
-$light: #EFECEA;
-
-$grey-10: #e5e5e5;
-$grey-20: #cccccc;
-$grey-40: #999999;
-$grey-60: #666666;
-$grey-80: #333333;
-
-$grey: $grey-60;
-$lightgrey: $grey-20;
-
 // BREAKPOINTS
 // Note: these are straight from Bulma's initial-variables.scss
 $gap: 64px !default

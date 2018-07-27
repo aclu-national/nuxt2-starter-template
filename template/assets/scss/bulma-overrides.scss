@@ -1,1 +1,39 @@
 /* Bulma overrides */
+
+// Import Bulma's core
+@import "node_modules/bulma/sass/utilities/initial-variables";
+@import "node_modules/bulma/sass/utilities/functions";
+@import "node_modules/bulma/sass/utilities/derived-variables.sass";
+
+// Import custom variables
+@import 'assets/scss/variables.scss';
+
+// OVERRIDE VARIABLES HERE
+$blue: #0055aa;
+
+// Derived variables
+$primary: $blue;
+$primary-invert: findColorInvert($primary);
+
+// Social colors
+$twitter: #2fa4f0;
+$twitter-invert: findColorInvert($twitter);
+$facebook: #3e5c98;
+$facebook-invert: findColorInvert($facebook);
+
+// Add new color variables to the color map to use as bulma classes (e.g. 'is-twitter')
+$addColors: (
+  "primary": ($primary, $primary-invert),
+  "twitter": ($twitter, $twitter-invert),
+  "facebook": ($facebook, $facebook-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+// Import rest of Bulma
+@import "node_modules/bulma/bulma";
+
+// Fix tiles on IE11
+// per https://roland.codes/blog/ie-flex-collapse-bug/
+.tile {
+  flex-basis: auto;
+}
