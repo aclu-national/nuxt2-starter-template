@@ -1,1 +1,71 @@
 @import 'assets/scss/variables.scss';
+@import 'assets/scss/aclu-fonts.scss';
+
+// FONT VARIABLES
+$aclu-sans-standard: "gtamstandard", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$aclu-sans-compressed: "gtamcompressed", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$aclu-sans-extended: "gtamextended", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$aclu-serif: "schoolbook", Georgia, "Times New Roman", "DejaVu Serif", serif;
+
+$family-primary: $aclu-sans-standard;
+$family-title: $aclu-sans-compressed;
+$family-extended: $aclu-sans-extended;
+$family-serif: $aclu-serif;
+
+body {
+  font-family: $family-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $family-title;
+  font-weight: $bold;
+  line-height: 1.2em;
+}
+
+p {
+  letter-spacing: -0.005rem;
+}
+
+// Links
+a {
+  text-decoration: underline;
+  &:focus {
+    color: $aclured;
+  }
+}
+.no-underline {
+  text-decoration: none !important;
+}
+
+// Fonts
+.has-font-family-primary {
+  font-family: $family-primary;
+}
+.has-font-family-title {
+  font-family: $family-title;
+}
+.has-font-family-serif {
+  font-family: $family-serif;
+  line-height: 1.4;
+  word-spacing: -.12em;
+  letter-spacing: .01em;
+}
+.has-font-family-extended {
+  font-family: $family-extended;
+}
+
+// Forms
+fieldset {
+  border: none;
+}
+legend {
+  display: table; // IE11
+  white-space: normal; // IE
+  width: 100%; // Edge
+}
+
