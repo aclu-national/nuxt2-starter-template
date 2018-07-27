@@ -6,9 +6,9 @@ Includes:
 
 - Axios ([axios-module](https://github.com/nuxt-community/axios-module))
 - Bulma ([nuxt-bulma-slim](https://github.com/mustardamus/nuxt-bulma-slim))
-- SASS
+- SASS/SCSS
 - eslint + prettier
-- ACLU branding
+- ACLU branding (per [ACLU style guidelines](https://aclu-national.github.io/style/))
 
 ## Prerequisites
 
