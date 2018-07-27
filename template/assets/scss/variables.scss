@@ -1,6 +1,43 @@
 /**
- ** SCSS variables
+ * SCSS variables
+ *
+ * See ACLU style guide: https://aclu-national.github.io/style/
  **/
+
+// FONTS
+$normal: 400;
+$bold: 700;
+
+// COLORS
+$blue: #0055aa;
+$red: #ef404e;
+$red-AA-compliant: #D93A3f; // WCAG AA compliant w/ white text
+
+$orange: #fcAA17;
+$yellow: #FFE06A;
+$pink: #FABEAF;
+
+$light-green: #A7D7B5;
+$dark-green: #00343A;
+$purple: #552564;
+$navy: #130f54;
+$azure: #A3DBE3;
+
+$light-slate: #EFECEA;
+$dark-slate: #3C3532;
+$offblack: #231F20;
+
+$grey-10: #e5e5e5;
+$grey-20: #cccccc;
+$grey-40: #999999;
+$grey-60: #666666;
+$grey-80: #333333;
+
+$dark: $offblack;
+$light: $light-slate;
+
+$grey: $grey-60;
+$light-grey: $grey-20;
 
 // BREAKPOINTS
 // Note: these are straight from Bulma's initial-variables.scss
