@@ -34,10 +34,8 @@ p {
 // Links
 a {
   text-decoration: underline;
-  &:focus {
-    color: $aclured;
-  }
 }
+.button,
 .no-underline {
   text-decoration: none !important;
 }
