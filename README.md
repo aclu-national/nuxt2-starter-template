@@ -27,7 +27,7 @@ $ npm install -g vue-cli
 Create a new project based on this `nuxt-starter-template`:
 
 ``` bash
-$ vue init aclu-national/starter-template my-project
+$ vue init aclu-national/nuxt-starter-template my-project
 $ cd my-project                     
 # install dependencies
 $ npm install # Or yarn install
