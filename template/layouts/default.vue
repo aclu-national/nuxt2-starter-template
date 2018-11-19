@@ -1,13 +1,27 @@
 <template>
   <div>
+    <Header />
     <nuxt/>
+    <Footer />
   </div>
 </template>
 
+<script>
+import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
+
+export default {
+  components: {
+    Header,
+    Footer
+  }
+}
+</script>
+
 <style>
 html {
-  font-family: 'Source Sans Pro', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  font-family: "gtamstandard", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-size: 18px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
