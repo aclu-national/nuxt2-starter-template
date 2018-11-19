@@ -5,8 +5,23 @@
  **/
 
 // FONTS
+$aclu-sans-standard: "gtamstandard", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$aclu-sans-compressed: "gtamcompressed", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+$aclu-serif: "schoolbook", Georgia, "Times New Roman", "DejaVu Serif", serif;
+
 $normal: 400;
 $bold: 700;
+
+// FONT SIZES
+$size-1: 60px;
+$size-2: 42px;
+$size-3: 36px;
+$size-4: 24px;
+$size-5: 18px;
+$size-6: 16px;
+$size-7: 13px;
+
+$body-size: $size-5;
 
 // COLORS
 $blue: #0055aa;
@@ -33,20 +48,30 @@ $grey-40: #999999;
 $grey-60: #666666;
 $grey-80: #333333;
 
+$light: $grey-10;
 $dark: $offblack;
-$light: $light-slate;
 
-$grey: $grey-60;
-$light-grey: $grey-20;
+$grey-darker:  $offblack;
+$grey-dark:    $grey-80;
+$grey:         $grey-60;
+$grey-light:   $grey-20;
+$grey-lighter: $grey-10;
+
+$border: $grey-20;
+
+// PROJECT-SPECIFIC COLORS
+// Add here
+
+// SPACING
+$spacer: 15px;
+
+// FORMS
+$inputHeight: 45px;
+$inputHeightLarge: 60px;
 
 // BREAKPOINTS
-// Note: these are straight from Bulma's initial-variables.scss
-$gap: 64px !default
-// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
-$tablet: 769px !default
-// 960px container + 4rem
-$desktop: 960px + (2 * $gap) !default
-// 1152px container + 4rem
-$widescreen: 1152px + (2 * $gap) !default
-// 1344px container + 4rem
-$fullhd: 1344px + (2 * $gap) !default
+$gap: 64px;                       // default Bulma (see initial-variables.scss)
+$tablet: 600px;                   // CHANGED
+$desktop: 1200px;                 // CHANGED
+$widescreen: 1152px + (2 * $gap); // default Bulma (see initial-variables.scss)
+$fullhd: 1344px + (2 * $gap);     // default Bulma (see initial-variables.scss)

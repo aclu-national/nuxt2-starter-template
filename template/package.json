@@ -15,19 +15,20 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.1",
-    "nuxt": "^1.4.1",
+    "nuxt": "^1.4.2",
     "nuxt-bulma-slim": "^0.4.0"
   },
   "devDependencies": {
+    "aclu-vue-library": "git+https://<access-token>:x-oauth-basic@github.com/aclu-national/aclu-vue-library.git#v0.1-alpha.1",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-prettier": "^2.10.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-vue": "^4.5.0",
-    "node-sass": "^4.9.0",
-    "prettier": "^1.13.5",
-    "sass-loader": "^7.0.3"
+    "node-sass": "^4.9.3",
+    "prettier": "^1.14.2",
+    "sass-loader": "^7.1.0"
   }
 }

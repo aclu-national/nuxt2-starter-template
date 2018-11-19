@@ -2,63 +2,201 @@
 @import 'assets/scss/aclu-fonts.scss';
 @import 'assets/scss/spacing.scss';
 
-// FONT VARIABLES
-$aclu-sans-standard: "gtamstandard", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-$aclu-sans-compressed: "gtamcompressed", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-$aclu-sans-extended: "gtamextended", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-$aclu-serif: "schoolbook", Georgia, "Times New Roman", "DejaVu Serif", serif;
-
-$family-primary: $aclu-sans-standard;
-$family-title: $aclu-sans-compressed;
-$family-extended: $aclu-sans-extended;
-$family-serif: $aclu-serif;
-
-body {
-  font-family: $family-primary;
+// MIXINS
+@mixin font-family-compressed () {
+  font-family: $aclu-sans-compressed;
+  line-height: 1;
+  letter-spacing: 0.005rem;
+  word-spacing: 0.1rem;
+  font-weight: $bold;
+}
+@mixin font-family-standard () {
+  font-family: $aclu-sans-standard;
+  line-height: 1.4;
+  letter-spacing: -0.005rem;
+  word-spacing: 0.0625rem;
+  font-weight: $normal;
+}
+@mixin font-family-standard-bold () {
+  font-family: $aclu-sans-standard;
+  line-height: 1.4;
+  letter-spacing: 0rem;
+  word-spacing: 0.0625rem;
+  font-weight: $bold;
+}
+@mixin font-family-serif () {
+  font-family: $aclu-serif;
+  line-height: 1.4;
+  letter-spacing: 0.01rem;
+  word-spacing: -0.12rem;
 }
 
+
+// TYPOGRAPHY
+body {
+  @include font-family-standard;
+  font-size: $body-size;
+  color: $grey-80;
+
+  // Bold body text needs different letter-spacing, word-spacing
+  .has-text-weight-bold,
+  b,
+  strong {
+    @include font-family-standard-bold;
+  }
+
+  .has-text-weight-normal {
+    @include font-family-standard;
+  }
+}
+
+// Headings
 h1,
+.is-h1 {
+  @include font-family-compressed;
+  font-size: $size-1;
+  color: $offblack;
+
+  &.is-size-2 {
+    font-size: $size-2;
+  }
+  &.is-size-3 {
+    font-size: $size-3;
+  }
+}
 h2,
+.is-h2  {
+  @include font-family-standard-bold;
+  font-size: $size-4;
+  color: $offblack;
+}
 h3,
+.is-h3  {
+  @include font-family-standard-bold;
+  font-size: $size-5;
+  color: $offblack;
+}
 h4,
+.is-h4  {
+  @include font-family-standard;
+  color: $grey-40;
+  font-size: $size-6;
+}
+
+// TODO: check these
 h5,
 h6 {
-  font-family: $family-title;
-  font-weight: $bold;
-  line-height: 1.2em;
+  @include font-family-standard-bold;
+  color: $offblack;
 }
 
-p {
-  letter-spacing: -0.005rem;
+// Section title
+.is-section-title {
+  @include font-family-compressed;
+  font-size: $size-2;
+  text-transform: uppercase;
+  color: $offblack;
 }
+
+
+// Body Text
+
+// Use these sparingly or not at all
+.has-font-family-compressed {
+  @include font-family-compressed;
+  // Compessed: to be used only with sizes 1, 2, 3
+}
+.has-font-family-standard {
+  @include font-family-standard;
+  // Standard: to be used only with sizes 4, 5, 6, 7
+
+  &.has-text-weight-bold,
+  .has-text-weight-bold,
+  b,
+  strong {
+    @include font-family-standard-bold;
+  }
+}
+.has-font-family-serif {
+  @include font-family-serif;
+  font-weight: $normal;
+  // Serif: to be used only with sizes 6, 7, and a modified 5
+
+  &.is-size-5 {
+    font-size: 21px;
+  }
+  &.has-text-weight-bold,
+  .has-text-weight-bold,
+  b,
+  strong {
+    @include font-family-serif;
+    font-weight: $bold;
+  }
+}
+
+// Use these for convenience
+.is-body-text {
+  @include font-family-standard;
+  font-size: $size-5;
+
+  &.has-text-weight-bold,
+  .has-text-weight-bold,
+  b,
+  strong {
+    @include font-family-standard-bold;
+  }
+}
+
+.is-caption {
+  @include font-family-serif;
+  font-size: $size-6;
+}
+.is-credit {
+  @include font-family-serif;
+  font-size: $size-7;
+  color: $grey-60;
+}
+.is-footnote {
+  @include font-family-standard;
+  font-size: $size-7;
+  color: $offblack;
+}
+
+
+// UI Text
+// TODO
 
 // Links
 a {
   text-decoration: underline;
+
+  &.text-link {
+    @include font-family-standard-bold;
+    color: $text;
+
+    &:hover,
+    &:focus {
+      color: rgba( $text, 0.5 );
+    }
+  }
 }
+nav a,
+button,
 .button,
 .no-underline {
   text-decoration: none !important;
 }
-
-// Fonts
-.has-font-family-primary {
-  font-family: $family-primary;
-}
-.has-font-family-title {
-  font-family: $family-title;
-}
-.has-font-family-serif {
-  font-family: $family-serif;
-  line-height: 1.4;
-  word-spacing: -.12em;
-  letter-spacing: .01em;
-}
-.has-font-family-extended {
-  font-family: $family-extended;
+nav a,
+button,
+.button {
+  @include font-family-standard-bold;
 }
 
-// Forms
+// FORMS
+form * {
+  color: $offblack;
+  border-color: $offblack;
+}
 fieldset {
   border: none;
 }
@@ -68,3 +206,143 @@ legend {
   width: 100%; // Edge
 }
 
+
+button,
+input,
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: $inputHeight;
+  min-width: $inputHeight;
+  width: auto;
+  line-height: 1.5;
+  padding: calc(.375em - 1px) calc(.625em - 1px);
+  position: relative;
+  vertical-align: top;
+  border: 2px solid $offblack;
+}
+input[type="text"],
+input[type="search"],
+input.is-tall,
+button.is-tall,
+.button.is-tall {
+  height: $inputHeightLarge;
+  min-width: $inputHeightLarge;
+}
+input[type="text"],
+input[type="search"]{
+  padding: 18px 9px 0;
+}
+.text-input-label {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  z-index: 2;
+  font-size: 13px;
+  @include font-family-standard-bold;
+}
+
+// ICONS
+.icon {
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &.search {
+    background-image: url('~/assets/icons/icon-search-ffffff.svg');
+  }
+
+  &.caret,
+  &.caret.down,
+  &.caret.up {
+    background-image: url('~/assets/icons/icon-caret-ffffff.svg');
+    background-size: 10px;
+    transform: rotate(90deg);
+  }
+  &.up {
+    transform: rotate(270deg);
+  }
+  // left and right carets used in links
+  &.right,
+  &.left {
+    background-image: url('~/assets/icons/icon-caret-0055aa.svg');
+    transform: rotate(0deg);
+    vertical-align: text-bottom;
+    height: 1em;
+  }
+  &.left {
+    transform: rotate(180deg);
+  }
+}
+a:hover .icon {
+  &.right,
+  &.left {
+    opacity: 0.7;
+  }
+}
+.round-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+// HELPERS
+.nowrap {
+  white-space: nowrap;
+}
+
+// Centering helpers
+.vcenter-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.hcenter-content {
+  display: flex;
+  justify-content: center;
+}
+.vbottom-content {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+// Accessibility
+.screenreader-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &.appear-on-focus:focus {
+    position: static;
+    overflow: visible;
+    width: auto;
+  }
+}
+
+// Bulma Overrides
+
+// Fix tiles on IE11
+// per https://roland.codes/blog/ie-flex-collapse-bug/
+.tile {
+  flex-basis: auto;
+}
+
+// Overwrite Bulma's max container width on desktop+
+@media screen and (min-width: $desktop) {
+  .container {
+      max-width: 1140px;
+      width: 1140px;
+  }
+}

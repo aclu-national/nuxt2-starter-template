@@ -14,7 +14,8 @@ $paddingKey: 'p';
 $separator: '-';
 $sizes: (
     ('none', 0),
-    ('xs', 5),
+    ('xxs', 7),
+    ('xs', 10),
     ('sm', 15),
     ('md', 30),
     ('lg', 45),
@@ -45,10 +46,10 @@ $positions: (
         $posKey: nth($position, 1);
         $posValue: nth($position, 2);
         .#{$marginKey}#{$posKey}#{$separator}#{$sizeKey} {
-            margin-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+            margin-#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
         }
         .#{$paddingKey}#{$posKey}#{$separator}#{$sizeKey} {
-            padding-#{$posValue}: sizeValue($sizeKey, $sizeValue);
+            padding-#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
         }
     }
 }
