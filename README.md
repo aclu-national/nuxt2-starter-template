@@ -24,49 +24,41 @@ If you don't yet have vue-cli installed:
 $ npm install -g vue-cli
 ```
 
-If you have installed vue-cli v3, you may also need to install vue-cli-init (see [docs](https://cli.vuejs.org/guide/creating-a-project.html#pulling-2-x-templates-legacy):
+This template requires vue-cli v2.x. If you are using vue-cli v3, you will also need to install `@vue/cli-init` (see [docs](https://cli.vuejs.org/guide/creating-a-project.html#pulling-2-x-templates-legacy):
 
 ```bash
 $ npm install -g @vue/cli-init
 ```
 
-To create a new project based on this `nuxt-starter-template`:
+### Steps for creating a new project based on this `nuxt-starter-template`:
+
+1. Initiate the vue project using this template:
 
 ``` bash
 $ vue init aclu-national/nuxt-starter-template my-project
 $ cd my-project
-# install dependencies
+```
+
+2. Update the personal access token for `aclu-vue-library` (see devDependencies in `package.json`)
+
+3. Install dependencies
+
+``` bash
 $ npm install # Or yarn install
 ```
 
-> Make sure to use a version of vue-cli >= 2.1 (`vue -V`).
-
-Note: due to licensing restrictions, this template does not include the font files referenced in the included `aclu-fonts.scss` file.  The font files may be obtained from the ACLU's privately maintained [styleguide](https://github.com/aclu-national/style).
-
-
-## Usage
-
-### Development
+4. Spin up the development server
 
 ``` bash
-# serve with hot reloading at localhost:3000
 $ npm run dev
 ```
 
-Go to [http://localhost:3000](http://localhost:3000)
+Your project will be available at http://localhost:3000
 
-### Production
+For more information, see your project's generated README.md
 
-``` bash
-# build for production and launch the server
-$ npm run build
-$ npm start
-```
+### Notes:
 
-### Generate
-
-``` bash
-# generate a static project
-$ npm run generate
-```
-
+1. Requires a version of vlue-cli >- 2.1
+2. The initial npm install will fail unless you have updated the github access token for `aclu-vue-library`, which is a private repo (see that project for details)
+3. Due to licensing restrictions, this template does not include the font files referenced in the included `aclu-fonts.scss` file.  The font files may be obtained from the ACLU's privately maintained [styleguide](https://github.com/aclu-national/style).
