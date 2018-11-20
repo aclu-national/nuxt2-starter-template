@@ -19,7 +19,7 @@
     "nuxt-bulma-slim": "^0.4.0"
   },
   "devDependencies": {
-    "aclu-vue-library": "git+https://<personal-access-token>:x-oauth-basic@github.com/aclu-national/aclu-vue-library.git#v0.1-alpha.1",
+    "aclu-vue-library": "git+https://<personal-access-token>:x-oauth-basic@github.com/aclu-national/aclu-vue-library.git",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
