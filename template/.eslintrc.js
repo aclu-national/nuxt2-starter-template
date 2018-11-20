@@ -21,7 +21,7 @@ module.exports = {
   rules: {
     semi: [ 2, 'never' ],
     'no-console': [ 'off' ],
-    'no-unused-vars': [ 'warn' ],
+    'vue/no-unused-vars': [ 'warn' ],
     'vue/max-attributes-per-line': [ 'off' ],
     'vue/html-quotes': [ 'warn' ],
     'vue/require-prop-types': [ 'warn' ],
