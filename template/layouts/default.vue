@@ -1,7 +1,9 @@
 <template>
   <div>
+    <!-- eslint-disable-next-line -->
     <Header />
-    <nuxt/>
+    <nuxt />
+    <!-- eslint-disable-next-line -->
     <Footer />
   </div>
 </template>

@@ -1,9 +1,7 @@
 <template>
   <div class="footer-wrapper has-background-white mt-lg">
     <section class="section">
-      <div class="container">
-        <BrandedFooter />
-      </div>
+      <div class="container"><BrandedFooter /></div>
     </section>
   </div>
 </template>

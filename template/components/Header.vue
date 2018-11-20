@@ -3,9 +3,7 @@
     <section class="section">
       <div class="container">
         <a href="#main" class="screenreader-only appear-on-focus">Skip to main content</a>
-        <no-ssr>
-          <BrandedNav />
-        </no-ssr>
+        <no-ssr><BrandedNav /></no-ssr>
       </div>
     </section>
   </div>

@@ -12,6 +12,9 @@ yarn-error.log*
 # Nuxt generate
 dist
 
+# Bulma build
+.tmp
+
 # Editor directories and files
 .idea
 .vscode

@@ -5,7 +5,9 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    ecmaVersion: 2017,
+    sourceType: "module"
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
@@ -14,20 +16,36 @@ module.exports = {
   ],
   // required to lint *.vue files
   plugins: [ 'vue' ],
-  // custom rules
+
+  // custom eslint rules
   rules: {
     semi: [ 2, 'never' ],
-    'no-console': 'off',
+    'no-console': [ 'off' ],
     'no-unused-vars': [ 'warn' ],
-    'vue/max-attributes-per-line': 'off',
+    'vue/max-attributes-per-line': [ 'off' ],
     'vue/html-quotes': [ 'warn' ],
     'vue/require-prop-types': [ 'warn' ],
-    'prettier/prettier': [
-      'warn',
-      {
+    'vue/no-v-html': [ 'off' ],
+    "vue/html-self-closing": ["warn", {
+      "html": {
+        "void": "any",
+        "normal": "always",
+        "component": "always"
+      }
+    }],
+    "vue/html-closing-bracket-newline": [ 'warn' ],
+    'vue/multiline-html-element-content-newline': ['warn', {
+      'ignores': ['pre', 'textarea', 'span', 'b', 'strong', 'a']
+    }],
+
+    // Prettier options
+    'prettier/prettier': [ 'warn', {
         semi: false,
         singleQuote: true,
-        printWidth: 120
+        printWidth: 120,
+        htmlWhitespaceSensitivity: 'ignore',
+        jsxBracketSameLine: true,
+        eslintIntegration: true
       }
     ]
   }
