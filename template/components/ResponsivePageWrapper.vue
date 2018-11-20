@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable-next-line -->
   <div :class="mqClass" role="main">
     <slot :isTouch="isTouch" />
   </div>

@@ -69,9 +69,9 @@ $spacer: 15px;
 $inputHeight: 45px;
 $inputHeightLarge: 60px;
 
-// BREAKPOINTS
-$gap: 64px;                       // default Bulma (see initial-variables.scss)
-$tablet: 600px;                   // CHANGED
-$desktop: 1200px;                 // CHANGED
-$widescreen: 1152px + (2 * $gap); // default Bulma (see initial-variables.scss)
-$fullhd: 1344px + (2 * $gap);     // default Bulma (see initial-variables.scss)
+// BREAKPOINTS -- see initial-variables.scss
+$gap: 64px;
+$tablet: 600px;
+$desktop: 1200px;
+$widescreen: 1152px + (2 * $gap);
+$fullhd: 1344px + (2 * $gap);

@@ -8,10 +8,11 @@
               <h1 class="title is-size-1">{{ name }}</h1>
               <p>{{ description }}</p>
 
-              <div class="pt-md">
+              <div v-if="!isTouch" class="pt-md">
                 <p>
                   Welcome to your Vue / Nuxt app. For information on getting started, try the
-                  <a href="https://nuxtjs.org/" target="_blank">Nuxt documentation</a>.
+                  <a href="https://nuxtjs.org/" target="_blank">Nuxt documentation</a>
+                  .
                 </p>
               </div>
             </div>

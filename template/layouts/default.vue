@@ -22,7 +22,7 @@ export default {
 
 <style>
 html {
-  font-family: "gtamstandard", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-family: 'gtamstandard', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
   font-size: 18px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
