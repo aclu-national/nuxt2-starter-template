@@ -52,7 +52,7 @@ module.exports = {
   /*
   ** Plugins
   */
-  plugins: ['~/plugins/aclu-vue-library.js'],
+  plugins: [{ src: '~plugins/aclu-vue-library', ssr: false }],
   /*
   ** Modules
   */
