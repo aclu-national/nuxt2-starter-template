@@ -22,6 +22,7 @@ module.exports = {
     semi: [ 2, 'never' ],
     'no-console': [ 'off' ],
     'vue/no-unused-vars': [ 'warn' ],
+    'vue/no-unused-components': [ 'warn' ],
     'vue/max-attributes-per-line': [ 'off' ],
     'vue/html-quotes': [ 'warn' ],
     'vue/require-prop-types': [ 'warn' ],
