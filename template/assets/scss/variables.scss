@@ -49,7 +49,7 @@ $grey-40: #999999;
 $grey-60: #666666;
 $grey-80: #333333;
 
-$light: $grey-10;
+$light: $light-slate; // $grey-10;
 $dark: $offblack;
 
 $grey-darker:  $offblack;
@@ -66,8 +66,8 @@ $instagram: #DF2E75;
 
 $border: $grey-20;
 
-// PROJECT-SPECIFIC COLORS
-// Add here
+// MISC
+$hover-opacity: 0.65;
 
 // FORMS
 $inputHeight: 45px;
@@ -91,4 +91,3 @@ $widescreen: $widescreenContainerWidth + (2 * $gap);   // L: 1200+
 
 // Not using Bulma's built-in fullhd breakpoint (disabled in bulma-overrides.scss)
 // $fullhd: 1344px + (2 * $gap);
-
