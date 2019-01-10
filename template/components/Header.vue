@@ -10,19 +10,9 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~assets/scss/variables.scss';
-
+// Preserve space for nav while it loads
 .header {
-  // Preserve space for nav while it loads
-  height: 106px;
-}
-
-@media screen and (max-width: $tablet) {
-  .header {
-    height: 60px;
-  }
-  .section {
-    padding: 0;
-  }
+  height: 76px;
 }
 </style>
+
