@@ -33,6 +33,9 @@ export default {
     setDevice() {
       // Breakpoints need to match those in variables.scss
       if (window.matchMedia('(min-width: 1200px)').matches) {
+        this.deviceBySize = 'widescreen'
+        this.isTouch = false
+      } else if (window.matchMedia('(min-width: 1000px)').matches) {
         this.deviceBySize = 'desktop'
         this.isTouch = false
       } else if (window.matchMedia('(max-width: 599px)').matches) {
