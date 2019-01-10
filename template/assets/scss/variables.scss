@@ -69,16 +69,26 @@ $border: $grey-20;
 // PROJECT-SPECIFIC COLORS
 // Add here
 
-// SPACING
-$spacer: 15px;
-
 // FORMS
 $inputHeight: 45px;
 $inputHeightLarge: 60px;
 
-// BREAKPOINTS -- see initial-variables.scss
-$gap: 64px;
-$tablet: 600px;
-$desktop: 1200px;
-$widescreen: 1152px + (2 * $gap);
-$fullhd: 1344px + (2 * $gap);
+// SPACING & BREAKPOINTS
+$spacer: 15px;
+$mobileSpacer: 7px;
+$columnPadding: 15px;
+
+$gap: 30px;
+$desktopGap: 20px;
+
+$tabletContainerWidth: 540px;
+$desktopContainerWidth: 960px;
+$widescreenContainerWidth: 1140px;
+
+$tablet: $tabletContainerWidth + (2 * $gap);           // S: 600 - 999
+$desktop: $desktopContainerWidth + (2 * $desktopGap);  // M: 1000 - 1199
+$widescreen: $widescreenContainerWidth + (2 * $gap);   // L: 1200+
+
+// Not using Bulma's built-in fullhd breakpoint (disabled in bulma-overrides.scss)
+// $fullhd: 1344px + (2 * $gap);
+
