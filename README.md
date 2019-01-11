@@ -32,7 +32,7 @@ $ npm install -g @vue/cli-init
 
 ### Steps for creating a new project based on this `nuxt-starter-template`:
 
-1. Initiate the vue project using this template:
+1. Initiate the Nuxt project using this template:
 
 ``` bash
 $ vue init aclu-national/nuxt-starter-template my-project
@@ -41,13 +41,15 @@ $ cd my-project
 
 2. Update the personal access token for `aclu-vue-library` (see devDependencies in `package.json`)
 
-3. Install dependencies
+3. [Import font files](https://github.com/aclu-national/style/tree/master/_reference/fonts/download)
+
+4. Install dependencies
 
 ``` bash
 $ npm install # Or yarn install
 ```
 
-4. Spin up the development server
+5. Spin up the development server
 
 ``` bash
 $ npm run dev
