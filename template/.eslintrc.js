@@ -7,7 +7,7 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint',
     ecmaVersion: 2017,
-    sourceType: "module"
+    sourceType: 'module'
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
@@ -28,14 +28,14 @@ module.exports = {
     'vue/html-quotes': [ 'warn' ],
     'vue/require-prop-types': [ 'warn' ],
     'vue/no-v-html': [ 'off' ],
-    "vue/html-self-closing": ["warn", {
-      "html": {
-        "void": "any",
-        "normal": "always",
-        "component": "always"
+    'vue/html-self-closing': ['warn', {
+      'html': {
+        'void': 'any',
+        'normal': 'always',
+        'component': 'always'
       }
     }],
-    "vue/html-closing-bracket-newline": [ 'warn' ],
+    'vue/html-closing-bracket-newline': [ 'warn' ],
     'vue/multiline-html-element-content-newline': ['warn', {
       'ignores': ['pre', 'textarea', 'span', 'b', 'strong', 'a']
     }],
