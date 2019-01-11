@@ -21,6 +21,6 @@ module.exports = {
       'message': 'Author'
     },
   },
-  completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}'
+  completeMessage: '{{#inPlace}}To get started:\n\n  # Update personal access token for aclu-vue-plugin library - see package.json\n  # Import font files from github.com/aclu-national/style\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  # Update personal access token for aclu-vue-plugin library - see package.json\n  # Import font files from github.com/aclu-national/style\n  npm install # Or yarn\n  npm run dev{{/inPlace}}'
 };
 

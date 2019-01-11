@@ -1,35 +1,6 @@
-@import 'assets/scss/variables.scss';
 @import 'assets/scss/aclu-fonts.scss';
-@import 'assets/scss/spacing.scss';
-
-// MIXINS
-@mixin font-family-compressed () {
-  font-family: $aclu-sans-compressed;
-  line-height: 1;
-  letter-spacing: 0.005rem;
-  word-spacing: 0.1rem;
-  font-weight: $bold;
-}
-@mixin font-family-standard () {
-  font-family: $aclu-sans-standard;
-  line-height: 1.4;
-  letter-spacing: -0.005rem;
-  word-spacing: 0.0625rem;
-  font-weight: $normal;
-}
-@mixin font-family-standard-bold () {
-  font-family: $aclu-sans-standard;
-  line-height: 1.4;
-  letter-spacing: 0rem;
-  word-spacing: 0.0625rem;
-  font-weight: $bold;
-}
-@mixin font-family-serif () {
-  font-family: $aclu-serif;
-  line-height: 1.4;
-  letter-spacing: 0.01rem;
-  word-spacing: -0.12rem;
-}
+@import 'assets/scss/mixins.scss';
+// Mixins also pulls in variables.scss
 
 
 // TYPOGRAPHY
@@ -92,10 +63,7 @@ h6 {
 
 // Section title
 .is-section-title {
-  @include font-family-compressed;
-  font-size: $size-2;
-  text-transform: uppercase;
-  color: $offblack;
+  @include section-title;
 }
 
 
@@ -176,7 +144,7 @@ a {
 
     &:hover,
     &:focus {
-      color: rgba( $text, 0.5 );
+      opacity: $hover-opacity;
     }
   }
 }
@@ -190,6 +158,19 @@ nav a,
 button,
 .button {
   @include font-family-standard-bold;
+}
+button,
+.button {
+  border: none;
+
+  &.is-outlined {
+    border: 2px solid $offblack;
+  }
+
+  &:hover {
+    opacity: $hover-opacity;
+    color: inherit;
+  }
 }
 
 // FORMS
@@ -208,7 +189,7 @@ legend {
 
 
 button,
-input,
+input:not[type="radio"],
 .button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -225,8 +206,20 @@ input,
   position: relative;
   vertical-align: top;
   border: 2px solid $offblack;
+
+  &.is-light {
+    border: 2px solid $white;
+    background-color: transparent;
+  }
+
 }
+input.has-error {
+  border: 2px solid $red !important;
+}
+
 input[type="text"],
+input[type="tel"],
+input[type="email"],
 input[type="search"],
 input.is-tall,
 button.is-tall,
@@ -235,6 +228,8 @@ button.is-tall,
   min-width: $inputHeightLarge;
 }
 input[type="text"],
+input[type="tel"],
+input[type="email"],
 input[type="search"]{
   padding: 18px 9px 0;
 }
@@ -272,16 +267,18 @@ input[type="search"]{
     background-image: url('~/assets/icons/icon-caret-0055aa.svg');
     transform: rotate(0deg);
     vertical-align: text-bottom;
-    height: 1em;
+    margin-top: 2px;
   }
   &.left {
     transform: rotate(180deg);
   }
-}
-a:hover .icon {
-  &.right,
-  &.left {
-    opacity: 0.7;
+  &.caret.is-light,
+  &.caret.is-light:hover {
+    background-image: url('~/assets/icons/icon-caret-ffffff.svg');
+  }
+  &.caret.is-dark,
+  &.caret.is-dark:hover {
+    background-image: url('~/assets/icons/icon-caret-231F20.svg');
   }
 }
 .round-icon {
@@ -293,7 +290,7 @@ a:hover .icon {
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
-  
+
   &.is-twitter {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSIgZmlsbD0ibm9uZSI+PHBhdGggZD0iTTYuMjkgMTguMjU0YzcuNTQ4IDAgMTEuNjc1LTYuMjUzIDExLjY3NS0xMS42NzUgMC0uMTc3LS4wMDQtLjM1NC0uMDEyLS41M0E4LjM0NCA4LjM0NCAwIDAgMCAyMCAzLjkyNGE4LjE4MiA4LjE4MiAwIDAgMS0yLjM1Ni42NDYgNC4xMTggNC4xMTggMCAwIDAgMS44MDQtMi4yN2MtLjc5My40Ny0xLjY3LjgxMi0yLjYwNi45OTZBNC4xMDQgNC4xMDQgMCAwIDAgOS44NSA3LjAzOGExMS42NSAxMS42NSAwIDAgMS04LjQ1Ny00LjI4NyA0LjA5MiA0LjA5MiAwIDAgMC0uNTU2IDIuMDYzIDQuMSA0LjEgMCAwIDAgMS44MjYgMy40MTUgNC4wNzMgNC4wNzMgMCAwIDEtMS44NTgtLjUxM3YuMDUyYTQuMTA1IDQuMTA1IDAgMCAwIDMuMjkxIDQuMDIzIDQuMTA4IDQuMTA4IDAgMCAxLTEuODUzLjA3IDQuMTA4IDQuMTA4IDAgMCAwIDMuODMzIDIuODVBOC4yMzIgOC4yMzIgMCAwIDEgLjk4IDE2LjQ2OGMtLjMzMSAwLS42NTgtLjAyLS45NzktLjA1N2ExMS42MTUgMTEuNjE1IDAgMCAwIDYuMjkgMS44NDMiIGZpbGw9IiNmZmYiLz48L2c+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAgMGgyMHYyMEgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==');
     background-size: 22px;
@@ -319,6 +316,14 @@ a:hover .icon {
 // HELPERS
 .nowrap {
   white-space: nowrap;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.is-relative {
+  position: relative;
 }
 
 // Centering helpers
@@ -361,10 +366,30 @@ a:hover .icon {
   flex-basis: auto;
 }
 
-// Overwrite Bulma's max container width on desktop+
-@media screen and (min-width: $desktop) {
+.container {
+  padding: 0 $spacer;
+}
+
+// Overwrite Bulma's max container width on tablet
+@media screen and (min-width: $tablet) and (max-width: $desktop) {
   .container {
-      max-width: 1140px;
-      width: 1140px;
+    width: $tabletContainerWidth;
   }
 }
+
+// Overwrite Bulma's max container width on desktop
+@media screen and (min-width: $desktop) {
+  .container {
+    width: $desktopContainerWidth;
+  }
+}
+
+// Overwrite Bulma's max container width on widescreen+
+@media screen and (min-width: $widescreen) {
+  .container {
+    width: $widescreenContainerWidth;
+  }
+}
+
+// Add spacing to the end to allow for tweaking
+@import 'assets/scss/spacing.scss';
