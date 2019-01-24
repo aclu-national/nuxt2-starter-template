@@ -12,6 +12,7 @@
 <style lang="scss" scoped>
 // Preserve space for nav while it loads
 .header {
-  height: 76px;
+  min-height: 76px;
+  height: auto;
 }
 </style>
