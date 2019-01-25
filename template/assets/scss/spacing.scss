@@ -51,6 +51,8 @@ $positions: (
         .#{$paddingKey}#{$posKey}#{$separator}#{$sizeKey} {
             padding-#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
         }
+
+        // these util classes for different screen sizes are dependent on bulma's mixin for screen sizes
         @include mobile {
             .#{$paddingKey}#{$posKey}#{$separator}#{$sizeKey}-is-mobile {
                 padding-#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
