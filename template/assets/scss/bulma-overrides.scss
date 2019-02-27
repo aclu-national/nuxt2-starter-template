@@ -20,8 +20,7 @@ $red-compliant-invert: findColorInvert($primary);
 @import "node_modules/bulma/sass/utilities/derived-variables.sass";
 
 // Breakpoints (see also variables.scss)
-// Disable the widescreen and fullhd breakpoints
-$widescreen-enabled: false;
+// Disable the fullhd breakpoint
 $fullhd-enabled: false;
 
 // Social colors
