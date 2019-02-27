@@ -24,7 +24,7 @@ If you don't yet have vue-cli installed:
 $ npm install -g vue-cli
 ```
 
-This template requires vue-cli v2.x. If you are using vue-cli v3, you will also need to install `@vue/cli-init` (see [docs](https://cli.vuejs.org/guide/creating-a-project.html#pulling-2-x-templates-legacy):
+This template requires vue-cli v2.x. If you are using vue-cli v3, you will also need to install `@vue/cli-init`: (see [docs](https://cli.vuejs.org/guide/creating-a-project.html#pulling-2-x-templates-legacy) for more info)
 
 ```bash
 $ npm install -g @vue/cli-init
