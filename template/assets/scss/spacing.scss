@@ -7,6 +7,8 @@
  *      - mt-sm (margin-top: 15px)
  *      - pb-md (padding-bottom: 30px)
  **/
+ // Need Bulma's mixins
+@import "~bulma/sass/utilities/mixins";
 
 $sizeUnit: px;
 $marginKey: 'm';

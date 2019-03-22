@@ -1,8 +1,8 @@
 /* Bulma overrides */
 
 // Import Bulma's core
-@import "node_modules/bulma/sass/utilities/initial-variables";
-@import "node_modules/bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
 
 // Overwrite Bulma's initial variables
 @import 'assets/scss/variables.scss';
@@ -17,7 +17,7 @@ $red-compliant: $red-AA-compliant;
 $red-compliant-invert: findColorInvert($primary);
 
 // Import Bulma's derived variables
-@import "node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "~bulma/sass/utilities/derived-variables.sass";
 
 // Breakpoints (see also variables.scss)
 // Disable the fullhd breakpoint
@@ -75,4 +75,4 @@ $link-hover: rgba( $blue, 0.75 );
 $link-focus: rgba( $blue, 0.75 );
 
 // Import rest of Bulma
-@import "node_modules/bulma/bulma";
+@import "~bulma/bulma";

@@ -1,3 +1,5 @@
+const isDev = process.env.DEPLOY_ENV === 'DEV'
+
 module.exports = {
   /*
   ** Headers of the page
@@ -40,6 +42,7 @@ module.exports = {
     ]
   },
   env: {
+    isDev: isDev,
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     apiBaseUrl:
       process.env.DEPLOY_ENV === 'PROD' ? 'REPLACE_PROD_API' : 'REPLACE_DEV_API',
@@ -56,15 +59,36 @@ module.exports = {
   /*
   ** Modules
   */
-  modules: [
-    [
-      'nuxt-bulma-slim',
-      {
-        variablesPath: 'assets/scss/bulma-overrides.scss',
-        additionalPaths: ['assets/scss/main.scss']
-      }
-    ]
-  ],
+  modules: ['@nuxtjs/axios', 'nuxt-purgecss'],
+  /*
+   ** axios module config
+   */
+  axios: {
+    debug: isDev
+  },
+  /*
+  ** CSS
+  */
+  css: [{ src: 'assets/scss/bulma-overrides.scss', lang: 'scss' }, { src: 'assets/scss/main.scss', lang: 'scss' }],
+  /*
+   ** Generate configuration
+   ** Define routes used for building static pages
+   */
+  // generate: {
+  //   fallback: true,
+  //   routes: function() {
+  //     let routes = [{ route: '/' }]
+  //     candidates.map(candidate => {
+  //       routes.push({
+  //         route: '/share/' + candidate.slug
+  //       })
+  //     })
+  //     return routes
+  //   }
+  // },
+  /*
+  ** Build configuration
+  */
   /*
   ** Build configuration
   */
@@ -73,19 +97,35 @@ module.exports = {
     ** Analyze build files
     */
     analyze: {
-      analyzerMode: 'static'
+      analyzerMode: isDev ? 'static' : 'disabled'
     },
     /*
-    ** Extract CSS in main chunk to separate cachaeble CSS file
-    */
-    extractCSS: {
-      allChunks: true
+     ** Extract CSS in main chunk to separate cachaeble CSS file
+     ** per https://github.com/nuxt/nuxt.js/issues/3166#issuecomment-409004911
+     */
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(s?css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    },
+    // Set babel plugin per
+    // https://stackoverflow.com/questions/53922898/nuxt-js-client-fails-in-production-but-works-during-development
+    babel: {
+      plugins: ['dynamic-import-node']
     },
     /*
     ** Run ESLint on save
     */
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

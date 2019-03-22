@@ -5,7 +5,7 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "DEPLOY_ENV=DEV nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -15,12 +15,13 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.1",
-    "nuxt": "^1.4.2",
-    "nuxt-bulma-slim": "^0.4.0"
+    "bulma": "^0.7.4",
+    "nuxt": "~2.4.5"
   },
   "devDependencies": {
     "aclu-vue-library": "git+https://<personal-access-token>:x-oauth-basic@github.com/aclu-national/aclu-vue-library.git",
     "babel-eslint": "^10.0.1",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
     "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-friendly-formatter": "^3.0.0",
@@ -28,6 +29,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-vue": "5.0.0-beta.4",
     "node-sass": "^4.9.3",
+    "nuxt-purgecss": "^0.2.1",
     "prettier": "1.15.2",
     "sass-loader": "^7.1.0"
   }
