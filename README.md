@@ -1,11 +1,11 @@
-# Nuxt Starter Template
+# Nuxt v2 Starter Template
 
-This is a [Nuxt.js](https://github.com/nuxt/nuxt.js) starter project template used for ACLU-branded projects
+This is a [Nuxt.js](https://github.com/nuxt/nuxt.js) v2 starter project template used for ACLU-branded projects
 
 Includes:
 
 - Axios ([axios-module](https://github.com/nuxt-community/axios-module))
-- Bulma ([nuxt-bulma-slim](https://github.com/mustardamus/nuxt-bulma-slim))
+- [Bulma](https://github.com/jgthms/bulma) (with [nuxt-purgecss](https://github.com/Developmint/nuxt-purgecss))
 - SASS/SCSS
 - eslint + prettier
 - ACLU branding (per [ACLU style guidelines](https://aclu-national.github.io/style/)), including logo assets
@@ -30,12 +30,12 @@ This template requires vue-cli v2.x. If you are using vue-cli v3, you will also 
 $ npm install -g @vue/cli-init
 ```
 
-### Steps for creating a new project based on this `nuxt-starter-template`:
+### Steps for creating a new project based on this `nuxt2-starter-template`:
 
 1. Initiate the Nuxt project using this template:
 
 ``` bash
-$ vue init aclu-national/nuxt-starter-template my-project
+$ vue init aclu-national/nuxt2-starter-template my-project
 $ cd my-project
 ```
 
