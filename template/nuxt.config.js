@@ -89,9 +89,6 @@ module.exports = {
   /*
   ** Build configuration
   */
-  /*
-  ** Build configuration
-  */
   build: {
     /*
     ** Analyze build files
