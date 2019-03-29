@@ -69,7 +69,20 @@ module.exports = {
   /*
   ** CSS
   */
-  css: [{ src: 'assets/scss/bulma-overrides.scss', lang: 'scss' }, { src: 'assets/scss/main.scss', lang: 'scss' }],
+  css: [
+    'aclu-vue-library/dist/aclu-vue-library.css',
+    { src: 'assets/scss/bulma-overrides.scss', lang: 'scss' },
+    { src: 'assets/scss/main.scss', lang: 'scss' }
+  ],
+  /*
+  ** PurgeCSS config
+  */
+  purgeCSS: {
+    enabled: true,
+    paths: [
+      'node_modules/aclu-vue-library/src/components/*.vue'
+    ]
+  },
   /*
    ** Generate configuration
    ** Define routes used for building static pages
