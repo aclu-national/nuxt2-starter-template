@@ -7,7 +7,8 @@
  *      - mt-sm (margin-top: 15px)
  *      - pb-md (padding-bottom: 30px)
  **/
- // Need Bulma's mixins
+
+// Need Bulma's mixins
 @import "~bulma/sass/utilities/mixins";
 
 $sizeUnit: px;
@@ -53,7 +54,55 @@ $positions: (
         .#{$paddingKey}#{$posKey}#{$separator}#{$sizeKey} {
             padding-#{$posValue}: sizeValue($sizeKey, $sizeValue) !important;
         }
+    }
+}
 
+@each $size in $sizes {
+    $sizeKey: nth($size, 1);
+    $sizeValue: nth($size, 2);
+    @include mobile {
+        .#{$paddingKey}#{$separator}#{$sizeKey}-mobile {
+            padding: sizeValue($sizeKey, $sizeValue) !important;
+        }
+        .#{$marginKey}#{$separator}#{$sizeKey}-mobile {
+            margin: sizeValue($sizeKey, $sizeValue) !important;
+        }
+    }
+    @include tablet {
+        .#{$paddingKey}#{$separator}#{$sizeKey}-tablet {
+            padding: sizeValue($sizeKey, $sizeValue) !important;
+        }
+        .#{$marginKey}#{$separator}#{$sizeKey}-tablet {
+            margin: sizeValue($sizeKey, $sizeValue) !important;
+        }
+    }
+    @include touch {
+        .#{$paddingKey}#{$separator}#{$sizeKey}-touch {
+            padding: sizeValue($sizeKey, $sizeValue) !important;
+        }
+        .#{$marginKey}#{$separator}#{$sizeKey}-touch {
+            margin: sizeValue($sizeKey, $sizeValue) !important;
+        }
+    }
+    @include desktop {
+        .#{$paddingKey}#{$separator}#{$sizeKey}-desktop {
+            padding: sizeValue($sizeKey, $sizeValue) !important;
+        }
+        .#{$marginKey}#{$separator}#{$sizeKey}-desktop {
+            margin: sizeValue($sizeKey, $sizeValue) !important;
+        }
+    }
+    @include widescreen {
+        .#{$paddingKey}#{$separator}#{$sizeKey}-widescreen {
+            padding: sizeValue($sizeKey, $sizeValue) !important;
+        }
+        .#{$marginKey}#{$separator}#{$sizeKey}-widescreen {
+            margin: sizeValue($sizeKey, $sizeValue) !important;
+        }
+    }
+    @each $position in $positions {
+        $posKey: nth($position, 1);
+        $posValue: nth($position, 2);
         // these util classes for different screen sizes are dependent on bulma's mixins for screen sizes
         @include mobile {
             .#{$paddingKey}#{$posKey}#{$separator}#{$sizeKey}-mobile {
