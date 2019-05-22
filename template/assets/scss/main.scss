@@ -358,16 +358,20 @@ input[type="search"]{
   }
 }
 
+// print style
+
+@media print {
+  .is-hidden-print {
+    display: none !important;
+  }
+}
+
 // Bulma Overrides
 
 // Fix tiles on IE11
 // per https://roland.codes/blog/ie-flex-collapse-bug/
 .tile {
   flex-basis: auto;
-}
-
-.container {
-  padding: 0 $spacer;
 }
 
 // Overwrite Bulma's max container width on tablet
@@ -388,6 +392,13 @@ input[type="search"]{
 @media screen and (min-width: $widescreen) {
   .container {
     width: $widescreenContainerWidth;
+  }
+}
+
+// Add container spacing on mobile only (it's the only fluid-width layout)
+@media screen and (max-width: $tablet - 1px) {
+  .container {
+    padding: 0 $spacer;
   }
 }
 
