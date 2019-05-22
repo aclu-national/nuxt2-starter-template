@@ -1,4 +1,6 @@
-const isDev = process.env.DEPLOY_ENV === 'DEV'
+const isProd = process.env.DEPLOY_ENV === 'PROD'
+const isStaging = process.env.DEPLOY_ENV === 'STAGING'
+const isDev = !isProd && !isStaging
 
 module.exports = {
   /*
@@ -43,9 +45,10 @@ module.exports = {
   },
   env: {
     isDev: isDev,
+    isProd: isProd,
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     apiBaseUrl:
-      process.env.DEPLOY_ENV === 'PROD' ? 'REPLACE_PROD_API' : 'REPLACE_DEV_API',
+      isProd ? 'REPLACE_PROD_API' : 'REPLACE_DEV_API',
     MAPBOX_TOKEN: 'REPLACE_MAPBOX_TOKEN'
   },
   /*
@@ -80,7 +83,7 @@ module.exports = {
   purgeCSS: {
     enabled: true,
     paths: [
-      'node_modules/aclu-vue-library/src/components/*.vue'
+      'node_modules/aclu-vue-library/src/components/*/*.vue'
     ]
   },
   /*
