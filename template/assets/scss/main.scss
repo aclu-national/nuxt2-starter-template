@@ -159,19 +159,6 @@ button,
 .button {
   @include font-family-standard-bold;
 }
-button,
-.button {
-  border: none;
-
-  &.is-outlined {
-    border: 2px solid $offblack;
-  }
-
-  &:hover {
-    opacity: $hover-opacity;
-    color: inherit;
-  }
-}
 
 // FORMS
 form * {
@@ -187,9 +174,8 @@ legend {
   width: 100%; // Edge
 }
 
-
 button,
-input,
+input:not([type="radio"]),
 .button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -211,7 +197,22 @@ input,
     border: 2px solid $white;
     background-color: transparent;
   }
+}
+// Buttons only
+button,
+.button {
+  border: none;
+  transition: opacity 0.25s;
+  padding: calc(.375em - 1px) 0.75em;
 
+  &.is-outlined {
+    border: 2px solid $offblack;
+  }
+
+  &:hover {
+    opacity: $hover-opacity;
+    color: inherit;
+  }
 }
 input.has-error {
   border: 2px solid $red !important;
