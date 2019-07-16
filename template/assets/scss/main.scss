@@ -1,7 +1,7 @@
 @import 'assets/scss/aclu-fonts.scss';
+@import "~bulma/sass/utilities/mixins";
 @import 'assets/scss/mixins.scss';
 // Mixins also pulls in variables.scss
-
 
 // TYPOGRAPHY
 body {
@@ -18,6 +18,9 @@ body {
 
   .has-text-weight-normal {
     @include font-family-standard;
+  }
+  @include touch {
+    overflow-x: hidden;
   }
 }
 
@@ -88,10 +91,11 @@ h6 {
 .has-font-family-serif {
   @include font-family-serif;
   font-weight: $normal;
-  // Serif: to be used only with sizes 6, 7, and a modified 5
+  font-size: $special-size-21;
+  // Serif: to be used only with sizes 6, 7, and a modified 5 (21px)
 
   &.is-size-5 {
-    font-size: 21px;
+    font-size: $special-size-21 !important;
   }
   &.has-text-weight-bold,
   .has-text-weight-bold,
@@ -124,10 +128,43 @@ h6 {
   font-size: $size-7;
   color: $grey-60;
 }
-.is-footnote {
+.is-footnote,
+.is-disclaimer  {
   @include font-family-standard;
   font-size: $size-7;
   color: $offblack;
+}
+
+// Special 21px size text
+// for other font sizes, use Bulma's classes:
+// `is-size-1`, `is-size-2-mobile`, etc.
+.is-special-size-21 {
+  font-size: $special-size-21;
+}
+@include mobile {
+  .is-special-size-21-mobile {
+    font-size: $special-size-21 !important;
+  }
+}
+@include tablet {
+  .is-special-size-21-tablet {
+    font-size: $special-size-21 !important;
+  }
+}
+@include touch {
+  .is-special-size-21-touch {
+    font-size: $special-size-21 !important;
+  }
+}
+@include desktop {
+  .is-special-size-21-desktop {
+    font-size: $special-size-21 !important;
+  }
+}
+@include widescreen {
+  .is-special-size-21-widescreen {
+    font-size: $special-size-21 !important;
+  }
 }
 
 
@@ -159,6 +196,26 @@ button,
 .button {
   @include font-family-standard-bold;
 }
+button,
+.button {
+  border: none;
+
+  &.is-outlined {
+    border: 2px solid $offblack;
+  }
+
+  &:hover {
+    opacity: $hover-opacity;
+    color: inherit;
+  }
+}
+
+.hover-drop-opacity {
+  transition: opacity 0.1s linear;
+  &:hover {
+    opacity: 0.8;
+  }
+}
 
 // FORMS
 form * {
@@ -174,8 +231,9 @@ legend {
   width: 100%; // Edge
 }
 
+
 button,
-input:not([type="radio"]),
+input,
 .button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -326,6 +384,9 @@ input[type="search"]{
 .is-relative {
   position: relative;
 }
+.full-height {
+  height: 100%;
+}
 
 // Centering helpers
 .vcenter-content {
@@ -376,32 +437,34 @@ input[type="search"]{
 }
 
 // Overwrite Bulma's max container width on tablet
-@media screen and (min-width: $tablet) and (max-width: $desktop) {
+@include tablet {
   .container {
     width: $tabletContainerWidth;
   }
 }
 
 // Overwrite Bulma's max container width on desktop
-@media screen and (min-width: $desktop) {
+@include desktop {
   .container {
     width: $desktopContainerWidth;
   }
 }
 
 // Overwrite Bulma's max container width on widescreen+
-@media screen and (min-width: $widescreen) {
+@include widescreen {
   .container {
     width: $widescreenContainerWidth;
   }
 }
 
 // Add container spacing on mobile only (it's the only fluid-width layout)
-@media screen and (max-width: $tablet - 1px) {
+// @media screen and (max-width: $tablet - 1px) {
+@include mobile {
   .container {
     padding: 0 $spacer;
   }
 }
+
 
 // Add spacing to the end to allow for tweaking
 @import 'assets/scss/spacing.scss';
