@@ -21,6 +21,8 @@ $size-5: 18px;
 $size-6: 16px;
 $size-7: 13px;
 
+$special-size-21: 21px; // not used by Bulma
+
 $body-size: $size-5;
 
 // COLORS
@@ -50,7 +52,7 @@ $grey-40: #999999;
 $grey-60: #666666;
 $grey-80: #333333;
 
-$light: $light-slate; // $grey-10;
+$light: $light-slate;
 $dark: $offblack;
 $text: $grey-80;
 
