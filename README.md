@@ -12,7 +12,9 @@ Includes:
 
 ## Prerequisites
 
-Make sure to have `node 8.0+` and `npm 5.0+` installed
+Make sure to have a node version between `node 8.0-10` and `npm 5.0+` installed
+
+Note: If you have a node version greater than ten, use nvm (https://github.com/nvm-sh/nvm) to install a lesser version of node (>nvm install 10). Otherwise you will run into errors when installing the dependencies.
 
 ## Installation
 
