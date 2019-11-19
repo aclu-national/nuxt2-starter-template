@@ -106,7 +106,7 @@ plugins/heap.js
 ### 4.) Content Security Policy (CSP)
 ```
 Update/add a list of trusted websites to the _headers file and place it in the static directory:
-/static/_headers
+/static/_headers ([example here] (https://github.com/aclu-national/dotorg-news-frontend/blob/staging/static/_headers)
 
 # Helps to prevent cross site scripting and unapproved plugins from running on the site.
 ```
