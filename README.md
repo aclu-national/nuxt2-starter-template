@@ -59,6 +59,70 @@ $ npm run dev
 
 Your project will be available at http://localhost:3000
 
+### Getting Started - New Development Cheat Sheet
+
+```
+The template get's you started but is not up to date with the latest innovations
+from other repos. The following few steps will help you get oriented with the code
+and design patterns for aclu.org.
+```
+### 1.) Layout and spacing primer
+
+@import 'assets/scss/mixins.scss' 
+// Also pulls in variables.scss and ~bulma/sass/utilities/mixins 
+
+Margin, padding and other page layout classes use bulma.io framework:
+example: <section class="section pt-md pt-sm-touch pb-xl info-box__section">
+
+'assets/scss/spacing.scss' contains the explanation of the custom spacing classes
+used in the above example.
+// Learn how to decipher pt-md and pb-xl in that file
+
+https://bulma.io/documentation/modifiers/typography-helpers/
+// Keep a tab open with this bulma page to remind you of what's available
+
+### 2.) After initiating the template check for any fresh updates or additions (from new repos) to the following:
+```
+
+Header.vue
+Footer.vue
+utils/colors.js
+utils/breakpoint.js
+assets/scss/*
+components/common/*
+
+```
+
+### 3.) Are the common plugins the most up to date?
+```
+Until we have a process to auto-update or inform repos that new plugins are available,
+we must do this manually. Some examples below:
+
+plugins/aclu-vue-library.js
+plugins/cookies.js
+plugins/chartbeat.js
+plugins/heap.js
+
+```
+
+### 4.) Content Security Policy (CSP)
+```
+
+Update/add a list of trusted websites to the _headers file and place it in the static directory:
+/static/_headers
+
+// Helps to prevent cross site scripting and unapproved plugins from running on the site.
+
+```
+
+### 4.) Redirects
+```
+Use the /static/_redirects in conjuction with fastly configuration to setup paths for the repo.
+Exanple entry, for the repo pages/ways-to-give.vue where the public url is https:///www.aclu.org/give/ways-to-give
+
+/ways-to-give   https://www.aclu.org/give/ways-to-give
+
+```
 For more information, see your project's generated README.md
 
 ### Notes:
