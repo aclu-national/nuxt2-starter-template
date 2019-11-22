@@ -83,7 +83,7 @@ module.exports = {
   purgeCSS: {
     enabled: true,
     paths: [
-      'node_modules/aclu-vue-library/dist/*'
+      'node_modules/aclu-vue-library/src/components/**/*.vue'
     ]
 
   },
