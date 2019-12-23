@@ -1,0 +1,41 @@
+$scrollbar-width: 15px;
+
+@mixin stretched () {
+  display: block;
+  flex: none;
+  padding-left: 0;
+  padding-right: 0;
+  max-width: calc(100vw + #{$scrollbar-width});
+  width: calc(100vw  + #{$scrollbar-width});
+  margin-left: calc((-100vw + 100% - #{$scrollbar-width})/2);
+}
+/* body should have overflow-x:hidden to use these classes */
+@include mobile {
+  .is-stretched-mobile {
+    @include stretched;
+    margin-left: -$scrollbar-width/2;
+  }
+}
+@include tablet {
+  .is-stretched-tablet {
+    @include stretched;
+  }
+}
+@include touch {
+  .is-stretched-touch {
+    @include stretched;
+    @include mobile {
+      margin-left: -$scrollbar-width/2;
+    }
+  }
+}
+@include desktop {
+  .is-stretched-desktop {
+    @include stretched;
+  }
+}
+@include widescreen {
+  .is-stretched-widescreen {
+    @include stretched;
+  }
+}
