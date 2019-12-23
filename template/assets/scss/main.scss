@@ -1,5 +1,4 @@
 @import 'assets/scss/aclu-fonts.scss';
-@import "~bulma/sass/utilities/mixins";
 @import 'assets/scss/mixins.scss';
 // Mixins also pulls in variables.scss
 
@@ -14,6 +13,11 @@ body {
   b,
   strong {
     @include font-family-standard-bold;
+  }
+
+  // Override bulma's default `<strong>` color
+  strong {
+    color: currentColor;
   }
 
   .has-text-weight-normal {
@@ -52,9 +56,8 @@ h3,
 }
 h4,
 .is-h4  {
-  @include font-family-standard;
-  color: $grey-40;
-  font-size: $size-6;
+  @include font-family-standard-bold;
+  font-size: $size-5;
 }
 
 // TODO: check these
@@ -128,8 +131,7 @@ h6 {
   font-size: $size-7;
   color: $grey-60;
 }
-.is-footnote,
-.is-disclaimer  {
+.is-footnote {
   @include font-family-standard;
   font-size: $size-7;
   color: $offblack;
@@ -167,24 +169,56 @@ h6 {
   }
 }
 
+// Special 30px size text
+.is-special-size-30 {
+  font-size: $title-size;
+}
 
 // UI Text
 // TODO
 
 // Links
+$opacity-transition: opacity 0.1s linear;
 a {
   text-decoration: underline;
+  transition: $opacity-transition;
+
+  &:hover,
+  &:focus {
+    opacity: $hover-opacity;
+  }
 
   &.text-link {
     @include font-family-standard-bold;
     color: $text;
-
-    &:hover,
-    &:focus {
-      opacity: $hover-opacity;
-    }
   }
 }
+// Link-like
+.add-hover-opacity {
+  transition: $opacity-transition;
+  &:hover,
+  &:focus {
+    opacity: $hover-opacity;
+  }
+}
+
+// Block links
+.blocklink-container {
+  transition: $opacity-transition;
+  position: relative;
+}
+.blocklink-container:hover {
+  opacity: $hover-opacity;
+  cursor: pointer;
+}
+.blocklink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 nav a,
 button,
 .button,
@@ -207,13 +241,6 @@ button,
   &:hover {
     opacity: $hover-opacity;
     color: inherit;
-  }
-}
-
-.hover-drop-opacity {
-  transition: opacity 0.1s linear;
-  &:hover {
-    opacity: 0.8;
   }
 }
 
@@ -342,8 +369,8 @@ input[type="search"]{
 }
 .round-icon {
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   text-decoration: none;
   background-repeat: no-repeat;
@@ -370,6 +397,10 @@ input[type="search"]{
     background-size: 25px;
     background-color: $instagram;
   }
+  &.is-copy {
+    background-image: url('~assets/icons/icon-ffffff-copylink.svg');
+    background-size: 25px;
+  }
 }
 
 // HELPERS
@@ -387,6 +418,18 @@ input[type="search"]{
 .full-height {
   height: 100%;
 }
+.reverse-row-order {
+  flex-direction: row-reverse;
+  @include mobile {
+    flex-direction: row;
+  }
+}
+.reverse-row-order-touch {
+  flex-direction: row;
+  @include touch {
+    flex-direction: row-reverse;
+  }
+}
 
 // Centering helpers
 .vcenter-content {
@@ -401,6 +444,11 @@ input[type="search"]{
 .vbottom-content {
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
+}
+.vbetween-content {
+  display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -420,7 +468,44 @@ input[type="search"]{
   }
 }
 
-// print style
+// Images
+$scrollbar-width: 15px;
+$placeholder_bg: $light;
+
+.placeholder--lazyload {
+  width: 100%;
+  min-width: 100%;
+  padding-top: 65%; // This assumes the image ratio is 1:0.65. Tweak padding-top if the image is in different aspect ratio.
+  height: 0;
+  background-color: rgba($placeholder_bg, 0.2);
+  animation: pulse 4s infinite;
+
+  &.no-background {
+    background-color: transparent;
+    animation: none;
+  }
+}
+
+// Placeholder animation
+@-webkit-keyframes pulse {
+  0%,
+  100% {
+    background-color: rgba($placeholder_bg, 0.2);
+  }
+  70% {
+    background-color: rgba($placeholder_bg, 0.6);
+  }
+}
+
+// Separator
+.separator__bold {
+  background-color: $offblack;
+  height: 5px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+
+// Print style
 
 @media print {
   .is-hidden-print {
@@ -429,6 +514,14 @@ input[type="search"]{
 }
 
 // Bulma Overrides
+
+// Hover colors
+a.has-text-white {
+  &:hover,
+  &:focus {
+    color: $white !important;
+  }
+}
 
 // Fix tiles on IE11
 // per https://roland.codes/blog/ie-flex-collapse-bug/
@@ -468,3 +561,5 @@ input[type="search"]{
 
 // Add spacing to the end to allow for tweaking
 @import 'assets/scss/spacing.scss';
+@import 'assets/scss/custom-grid.scss';
+@import 'assets/scss/line-clamp.scss';

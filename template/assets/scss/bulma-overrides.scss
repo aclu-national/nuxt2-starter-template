@@ -11,8 +11,6 @@ $family-sans-serif: $aclu-sans-standard;
 
 $primary: $blue;
 $primary-invert: findColorInvert($primary);
-$secondary: $red;
-$secondary-invert: findColorInvert($secondary);
 $red-compliant: $red-AA-compliant;
 $red-compliant-invert: findColorInvert($primary);
 
@@ -63,7 +61,12 @@ $dropdown-item-active-color: $text;
 $addColors: (
   "dark": ($dark, $light),
   "light": ($light, $dark),
-  "secondary": ($secondary, $secondary-invert),
+  "azure": ($light-azure, $dark-navy),
+  "navy": ($dark-navy, $light-azure),
+  "green": ($dark-green, $light-green),
+  "yellow": ($light-yellow, $dark-burgundy),
+  "burgundy": ($dark-burgundy, $light-yellow),
+  "pink": ($light-pink, $dark-burgundy),
   "twitter": ($twitter, $twitter-invert),
   "facebook": ($facebook, $facebook-invert)
 );
@@ -71,8 +74,8 @@ $colors: map-merge($colors, $addColors);
 
 // Link colors
 $link: $blue;
-$link-hover: rgba( $blue, 0.75 );
-$link-focus: rgba( $blue, 0.75 );
+$link-hover: $blue;
+$link-focus: $blue;
 
 // Import rest of Bulma
 @import "~bulma/bulma";
