@@ -1,0 +1,32 @@
+/**  Line Clamp Classes
+ *
+ *   Creates classes for limiting the number of lines displayed (includes ellipsis)
+ *
+ * 	 Multi-line clamping is based on solution at https://css-tricks.com/almanac/properties/l/line-clamp/
+ *   which does not work in IE11
+ *
+ *   Examples:
+ *      - line-clamp-2 (limits to two lines)
+ *      - line-clamp-3 (limits to three lines)
+ **/
+
+ $className: 'line-clamp';
+ $separator: '-';
+ $sizes: ( 2, 3, 4, 5, 6 );
+
+// For single line, use better-supported truncate solution
+.#{$className}#{$separator}1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+ @each $size in $sizes {
+	.#{$className}#{$separator}#{$size} {
+	  display: -webkit-box;
+	  -webkit-line-clamp: #{$size};
+	  overflow: hidden;
+	  /* autoprefixer: ignore next */
+	  -webkit-box-orient: vertical;
+	}
+ }
