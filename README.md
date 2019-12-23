@@ -43,15 +43,13 @@ $ cd my-project
 
 2. Update the personal access token for `aclu-vue-library` (see devDependencies in `package.json`)
 
-3. [Import font files](https://github.com/aclu-national/style/tree/master/_reference/fonts/download)
-
-4. Install dependencies
+3. Install dependencies
 
 ``` bash
 $ npm install # Or yarn install
 ```
 
-5. Spin up the development server
+4. Spin up the development server
 
 ``` bash
 $ npm run dev
@@ -126,4 +124,3 @@ For more information, see your project's generated README.md
 
 1. Requires a version of vlue-cli >- 2.1
 2. The initial npm install will fail unless you have updated the github access token for `aclu-vue-library`, which is a private repo (see that project for details)
-3. Due to licensing restrictions, this template does not include the font files referenced in the included `aclu-fonts.scss` file.  The font files may be obtained from the ACLU's privately maintained [styleguide](https://github.com/aclu-national/style).
