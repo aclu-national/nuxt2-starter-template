@@ -13,29 +13,29 @@
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.1",
-    "bulma": "^0.7.4",
-    "nuxt": "~2.4.5"
+    "@nuxtjs/axios": "^5.9.0",
+    "bulma": "^0.7.5",
+    "nuxt": "~2.11.0"
   },
   "devDependencies": {
     "aclu-vue-library": "git+https://<personal-access-token>:x-oauth-basic@github.com/aclu-national/aclu-vue-library.git",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-dynamic-import-node": "^2.2.0",
-    "eslint": "^5.9.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-prettier": "^3.0.0",
-    "eslint-plugin-vue": "5.0.0-beta.4",
-    "husky": "^2.3.0",
-    "node-sass": "^4.9.3",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-dynamic-import-node": "^2.3.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-vue": "6.0.1",
+    "husky": "^3.1.0",
+    "node-sass": "^4.13.0",
     "nuxt-purgecss": "^0.2.1",
-    "prettier": "1.15.2",
-    "sass-loader": "^7.1.0"
+    "prettier": "1.19.1",
+    "sass-loader": "^8.0.0"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint"
     }
- }
+  }
 }
