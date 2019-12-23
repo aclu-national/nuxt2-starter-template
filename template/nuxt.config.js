@@ -2,6 +2,11 @@ const isProd = process.env.DEPLOY_ENV === 'PROD'
 const isStaging = process.env.DEPLOY_ENV === 'STAGING'
 const isDev = !isProd && !isStaging
 
+// Meta tags (Note: can be overwritten by individual pages)
+const description = '{{escape description }}'
+const canonicalUrl = 'https://www.aclu.org/' // <--------------------------- UPDATE
+const robotPolicy = isProd ? 'all' : 'noindex, nofollow'
+
 module.exports = {
   /*
   ** Headers of the page
@@ -14,9 +19,9 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '{{escape description }}' },
+      { hid: 'description', name: 'description', content: description },
       { hid: 'og:title', property: 'og:title', content: '{{escape name }}' },
-      { hid: 'og:description', name: 'og:description', content: '{{escape description }}' },
+      { hid: 'og:description', name: 'og:description', content: description },
       // {
       //   hid: 'og:image',
       //   property: 'og:image',
@@ -24,12 +29,13 @@ module.exports = {
       // },
       // { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
       // { hid: 'og:image:height', property: 'og:image:height', content: '675' },
-      // { hid: 'og:url', property: 'og:url', content: 'https://aclu.org/voter' },
+      { hid: 'og:url', property: 'og:url', content: canonicalUrl },
       { hid: 'og:site_name', property: 'og:site_name', content: 'American Civil Liberties Union' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', name: 'twitter:site', content: '@ACLU' },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: '@ACLU' }
+      { hid: 'twitter:creator', name: 'twitter:creator', content: '@ACLU' },
+      { hid: 'robots', name: 'robots', content: robotPolicy }
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: 'https://static.aclu.org/images/favicon/favicon-16x16.png', sizes: '16x16' },
@@ -40,7 +46,7 @@ module.exports = {
         href: 'https://static.aclu.org/images/favicon/apple-touch-icon.png',
         sizes: '183x183'
       }
-      // { rel: 'canonical', href: 'https://www.aclu.org/voter' }
+      // { hid: 'canonical', rel: 'canonical', href: canonicalUrl }
     ]
   },
   env: {
@@ -59,6 +65,12 @@ module.exports = {
   ** Plugins
   */
   plugins: [{ src: '~plugins/aclu-vue-library', ssr: true }],
+  plugins: [
+    { src: '~plugins/aclu-vue-library', ssr: true },
+    { src: '~plugins/heap', ssr: false },
+    { src: '~plugins/cookies', mode: 'client' },
+    { src: '~plugins/optimizely', ssr: false }
+  ],
   /*
   ** Modules
   */
