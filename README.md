@@ -57,30 +57,36 @@ $ npm run dev
 
 Your project will be available at http://localhost:3000
 
-### Getting Started - New Development Cheat Sheet
+For more information, see your project's generated README.md
 
-```
-The template get's you started but is not up to date with the latest innovations
-from other repos. The following few steps will help you get oriented with the code
-and design patterns for aclu.org.
-```
+### Notes:
+
+1. Requires a version of vlue-cli >- 2.1
+2. The initial npm install will fail unless you have updated the github access token for `aclu-vue-library`, which is a private repo (see that project for details)
+
+## Getting Started - Some common next steps
+
+Given the fast-paced nature of these projects, this template may not have the latest updates used by our other front-end repos. The following steps will help you check for updates and get you oriented with the code and design patterns for other nuxt-based aclu.org frontends.
+
 ### 1.) Layout and spacing primer
 ```
 @import 'assets/scss/mixins.scss' 
 # Also pulls in variables.scss and ~bulma/sass/utilities/mixins 
 
 <section class="section pt-md pt-sm-touch pb-xl info-box__section">
-# Margin, padding and other page layout styles use bulma.io framework
+# Most page layout styles use the bulma.io CSS framework
 
 'assets/scss/spacing.scss' contains the explanation of the custom spacing classes
 used in the above example.
-# Learn how to decipher pt-md and pb-xl in that file
+# TIP: Learn how to decipher pt-md and pb-xl in that file
 
 https://bulma.io/documentation/modifiers/typography-helpers/
-# Keep a tab open with this bulma page to remind you of what's available
+# TIP: Keep a tab open with this bulma page to remind you of what's available
 ```
 
-### 2.) After initiating the template check for any fresh updates or additions (from new repos) to the following:
+### 2.) Check for fresh updates
+
+After initiating the template, check for any fresh updates or additions (from new repos) to the following:
 ```
 Header.vue
 Footer.vue
@@ -88,9 +94,13 @@ utils/colors.js
 utils/breakpoint.js
 assets/scss/*
 components/common/*
+plugins/*
+/static/_headers (used for CSP headers mainly)
 ```
 
-### 3.) Are the common plugins the most up to date?
+If you find updates, add them to the `/template/` files in this repo and help the next person!
+
+### 3.) Are the common plugins the most up to date? <-- ADD THESE TO TEMPLATE, THEN DELETE STEP
 ```
 Until we have a process to auto-update or inform repos that new plugins are available,
 we must do this manually. Some examples below:
@@ -101,7 +111,7 @@ plugins/chartbeat.js
 plugins/heap.js
 ```
 
-### 4.) Content Security Policy (CSP)
+### 4.) Content Security Policy (CSP) <-- ADD TO TEMPLATE, THEN DELETE STEP
 ```
 Update/add a list of trusted websites to the _headers file and place it in the static directory:
 /static/_headers 
@@ -110,17 +120,6 @@ Update/add a list of trusted websites to the _headers file and place it in the s
 # Helps to prevent cross site scripting and unapproved plugins from running on the site.
 ```
 
-### 4.) Redirects
-```
-Use the /static/_redirects in conjuction with fastly configuration to setup paths for the repo.
-Exanple entry for pages/ways-to-give.vue where the public url is 
-https:///www.aclu.org/give/ways-to-give
+### 4.) Set up redirects
 
-/ways-to-give   https://www.aclu.org/give/ways-to-give
-```
-For more information, see your project's generated README.md
-
-### Notes:
-
-1. Requires a version of vlue-cli >- 2.1
-2. The initial npm install will fail unless you have updated the github access token for `aclu-vue-library`, which is a private repo (see that project for details)
+Assuming this project is hosted on Netlify, you can set up redirects in a `/static/_redirects` file.  Netlify will read that file and initiate redirects on initial app/page load.
