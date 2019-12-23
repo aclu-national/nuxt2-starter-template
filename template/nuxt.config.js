@@ -32,12 +32,12 @@ module.exports = {
       { hid: 'twitter:creator', name: 'twitter:creator', content: '@ACLU' }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicon-16x16.png', sizes: '16x16' },
-      { rel: 'icon', type: 'image/png', href: '/favicon-32x32.png', sizes: '32x32' },
+      { rel: 'icon', type: 'image/png', href: 'https://static.aclu.org/images/favicon/favicon-16x16.png', sizes: '16x16' },
+      { rel: 'icon', type: 'image/png', href: 'https://static.aclu.org/images/favicon/favicon-32x32.png', sizes: '32x32' },
       {
         rel: 'apple-touch-icon',
         type: 'image/png',
-        href: '/apple-touch-icon.png',
+        href: 'https://static.aclu.org/images/favicon/apple-touch-icon.png',
         sizes: '183x183'
       }
       // { rel: 'canonical', href: 'https://www.aclu.org/voter' }
