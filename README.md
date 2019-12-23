@@ -64,6 +64,7 @@ For more information, see your project's generated README.md
 1. Requires a version of vlue-cli >- 2.1
 2. The initial npm install will fail unless you have updated the github access token for `aclu-vue-library`, which is a private repo (see that project for details)
 
+
 ## Getting Started - Some common next steps
 
 Given the fast-paced nature of these projects, this template may not have the latest updates used by our other front-end repos. The following steps will help you check for updates and get you oriented with the code and design patterns for other nuxt-based aclu.org frontends.
@@ -100,26 +101,6 @@ plugins/*
 
 If you find updates, add them to the `/template/` files in this repo and help the next person!
 
-### 3.) Are the common plugins the most up to date? <-- ADD THESE TO TEMPLATE, THEN DELETE STEP
-```
-Until we have a process to auto-update or inform repos that new plugins are available,
-we must do this manually. Some examples below:
-
-plugins/aclu-vue-library.js
-plugins/cookies.js
-plugins/chartbeat.js
-plugins/heap.js
-```
-
-### 4.) Content Security Policy (CSP) <-- ADD TO TEMPLATE, THEN DELETE STEP
-```
-Update/add a list of trusted websites to the _headers file and place it in the static directory:
-/static/_headers 
-# (example here: https://github.com/aclu-national/dotorg-news-frontend/blob/staging/static/_headers)
-
-# Helps to prevent cross site scripting and unapproved plugins from running on the site.
-```
-
-### 4.) Set up redirects
+### 3.) Set up redirects
 
 Assuming this project is hosted on Netlify, you can set up redirects in a `/static/_redirects` file.  Netlify will read that file and initiate redirects on initial app/page load.
