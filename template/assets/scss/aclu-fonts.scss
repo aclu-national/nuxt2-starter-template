@@ -3,20 +3,20 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local('GT America Standard Regular'), url('~assets/fonts/GT-America-Standard-Regular.woff2') format('woff2'),
-    url('~assets/fonts/GT-America-Standard-Regular.woff') format('woff'),
-    url('~assets/fonts/GT-America-Standard-Regular.ttf') format('truetype'),
-    url('~assets/fonts/GT-America-Standard-Regular.eot') format('embedded-opentype');
+  src: local('GT America Standard Regular'), url('https://static.aclu.org/fonts/GT-America-Standard-Regular.woff2') format('woff2'),
+    url('https://static.aclu.org/fonts/GT-America-Standard-Regular.woff') format('woff'),
+    url('https://static.aclu.org/fonts/GT-America-Standard-Regular.ttf') format('truetype'),
+    url('https://static.aclu.org/fonts/GT-America-Standard-Regular.eot') format('embedded-opentype');
 }
 @font-face {
   font-family: 'gtamstandard';
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('GT America Standard Bold'), url('~assets/fonts/GT-America-Standard-Bold.woff2') format('woff2'),
-    url('~assets/fonts/GT-America-Standard-Bold.woff') format('woff'),
-    url('~assets/fonts/GT-America-Standard-Bold.ttf') format('truetype'),
-    url('~assets/fonts/GT-America-Standard-Bold.eot') format('embedded-opentype');
+  src: local('GT America Standard Bold'), url('https://static.aclu.org/fonts/GT-America-Standard-Bold.woff2') format('woff2'),
+    url('https://static.aclu.org/fonts/GT-America-Standard-Bold.woff') format('woff'),
+    url('https://static.aclu.org/fonts/GT-America-Standard-Bold.ttf') format('truetype'),
+    url('https://static.aclu.org/fonts/GT-America-Standard-Bold.eot') format('embedded-opentype');
 }
 
 @font-face {
@@ -24,21 +24,22 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local('GT America Compressed Regular'), url('~assets/fonts/GT-America-Compressed-Regular.woff2') format('woff2'),
-    url('~assets/fonts/GT-America-Compressed-Regular.woff') format('woff'),
-    url('~assets/fonts/GT-America-Compressed-Regular.ttf') format('truetype'),
-    url('~assets/fonts/GT-America-Compressed-Regular.eot') format('embedded-opentype');
+  src: local('GT America Compressed Regular'), url('https://static.aclu.org/fonts/GT-America-Compressed-Regular.woff2') format('woff2'),
+    url('https://static.aclu.org/fonts/GT-America-Compressed-Regular.woff') format('woff'),
+    url('https://static.aclu.org/fonts/GT-America-Compressed-Regular.ttf') format('truetype'),
+    url('https://static.aclu.org/fonts/GT-America-Compressed-Regular.eot') format('embedded-opentype');
 }
 
 @font-face {
   font-family: 'gtamcompressed';
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
-  src: local('GT America Compressed Bold'), url('~assets/fonts/GT-America-Compressed-Bold.woff2') format('woff2'),
-    url('~assets/fonts/GT-America-Compressed-Bold.woff') format('woff'),
-    url('~assets/fonts/GT-America-Compressed-Bold.ttf') format('truetype'),
-    url('~assets/fonts/GT-America-Compressed-Bold.eot') format('embedded-opentype');
+  font-display: fallback;
+  src: local('GT America Compressed Bold'),
+    url('https://static.aclu.org/fonts/GT-America-Compressed-Bold-cdn.woff2') format('woff2'),
+    url('https://static.aclu.org/fonts/GT-America-Compressed-Bold.woff') format('woff'),
+    url('https://static.aclu.org/fonts/GT-America-Compressed-Bold.ttf') format('truetype'),
+    url('https://static.aclu.org/fonts/GT-America-Compressed-Bold.eot') format('embedded-opentype');
 }
 
 @font-face {
@@ -46,10 +47,10 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('GT America Extended Bold'), url('~assets/fonts/GT-America-Extended-Bold.woff2') format('woff2'),
-    url('~assets/fonts/GT-America-Extended-Bold.woff') format('woff'),
-    url('~assets/fonts/GT-America-Extended-Bold.ttf') format('truetype'),
-    url('~assets/fonts/GT-America-Extended-Bold.eot') format('embedded-opentype');
+  src: local('GT America Extended Bold'), url('https://static.aclu.org/fonts/GT-America-Extended-Bold.woff2') format('woff2'),
+    url('https://static.aclu.org/fonts/GT-America-Extended-Bold.woff') format('woff'),
+    url('https://static.aclu.org/fonts/GT-America-Extended-Bold.ttf') format('truetype'),
+    url('https://static.aclu.org/fonts/GT-America-Extended-Bold.eot') format('embedded-opentype');
 }
 
 @font-face {
@@ -57,8 +58,8 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local('CenturySchoolbook-Regular'), url('~assets/fonts/CenturySchoolbook-Regular-webfont.woff2') format('woff2'),
-    url('~assets/fonts/CenturySchoolbook-Regular-webfont.woff') format('woff');
+  src: local('CenturySchoolbook-Regular'), url('https://static.aclu.org/fonts/CenturySchoolbook-Regular-webfont.woff2') format('woff2'),
+    url('https://static.aclu.org/fonts/CenturySchoolbook-Regular-webfont.woff') format('woff');
 }
 
 @font-face {
@@ -66,6 +67,6 @@
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: local('CenturySchoolbook-Bold'), url('~assets/fonts/CenturySchoolbook-Bold-webfont.woff2') format('woff2'),
-    url('~assets/fonts/CenturySchoolbook-Bold-webfont.woff') format('woff');
+  src: local('CenturySchoolbook-Bold'), url('https://static.aclu.org/fonts/CenturySchoolbook-Bold-webfont.woff2') format('woff2'),
+    url('https://static.aclu.org/fonts/CenturySchoolbook-Bold-webfont.woff') format('woff');
 }
