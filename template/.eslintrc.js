@@ -1,19 +1,23 @@
 module.exports = {
   root: true,
+
   env: {
     browser: true,
     node: true
   },
+
   parserOptions: {
     parser: 'babel-eslint',
     ecmaVersion: 2017,
     sourceType: 'module'
   },
+
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     'plugin:vue/recommended',
     'plugin:prettier/recommended'
   ],
+
   // required to lint *.vue files
   plugins: [ 'vue' ],
 
@@ -51,5 +55,17 @@ module.exports = {
         eslintIntegration: true
       }
     ]
-  }
+  },
+
+  overrides: [
+    {
+      files: [
+        '**/__tests__/*.{j,t}s?(x)',
+        '**/tests/unit/**/*.spec.{j,t}s?(x)'
+      ],
+      env: {
+        jest: true
+      }
+    }
+  ]
 };
