@@ -18,6 +18,10 @@
     "nuxt": "~2.11.0"
   },
   "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.5",
+    "@vue/cli-plugin-unit-jest": "^4.1.2",
+    "@vue/cli-service": "^4.1.2",
+    "@vue/test-utils": "^1.0.0-beta.30",
     "aclu-vue-library": "git+https://<personal-access-token>:x-oauth-basic@github.com/aclu-national/aclu-vue-library.git",
     "babel-eslint": "^10.0.3",
     "babel-plugin-dynamic-import-node": "^2.3.0",
