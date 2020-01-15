@@ -23,3 +23,7 @@ dist
 
 # misc
 .DS_Store
+
+#lockfile
+package-lock.json
+template/package-lock.json
