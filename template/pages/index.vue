@@ -1,6 +1,6 @@
 <template>
   <responsive-page-wrapper>
-    <template slot-scope="{ isTouch }">
+    <template slot-scope="{ isTouch, deviceBySize }">
       <div id="main">
         <div class="has-background-white">
           <section class="section">
@@ -24,12 +24,9 @@
 </template>
 
 <script>
-import ResponsivePageWrapper from '~/components/ResponsivePageWrapper'
 
 export default {
-  components: {
-    ResponsivePageWrapper
-  }
+
 }
 </script>
 
