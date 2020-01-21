@@ -15,11 +15,22 @@ module.exports = {
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     'plugin:vue/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier-vue/recommended'
   ],
 
   // required to lint *.vue files
   plugins: [ 'vue' ],
+
+  settings: {
+    'prettier-vue': {
+      // Prettier only for script and style block
+      SFCBlocks: {
+        template: false,
+        script: true,
+        style: true
+      }
+    }
+  },
 
   // custom eslint rules
   rules: {
@@ -45,7 +56,9 @@ module.exports = {
     }],
 
     // Prettier options
-    'prettier/prettier': [ 'warn', {
+    'prettier-vue/prettier': [
+      'warn',
+      {
         semi: false,
         singleQuote: true,
         printWidth: 120,
@@ -55,17 +68,5 @@ module.exports = {
         eslintIntegration: true
       }
     ]
-  },
-
-  overrides: [
-    {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
-      ],
-      env: {
-        jest: true
-      }
-    }
-  ]
-};
+  }
+}
