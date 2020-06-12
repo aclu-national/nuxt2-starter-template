@@ -100,7 +100,7 @@ module.exports = {
   purgeCSS: {
     enabled: true,
     paths: [
-      'node_modules/aclu-vue-library/src/components/**/*.vue'
+      'node_modules/aclu-vue-library/src/components/**/*.vue','node_modules/aclu-vue-library/src/components/**/*.js'
     ]
 
   },
@@ -135,23 +135,6 @@ module.exports = {
      ** per https://github.com/nuxt/nuxt.js/issues/3166#issuecomment-409004911
      */
     extractCSS: true,
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(s?css|vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
-        }
-      }
-    },
-    // Set babel plugin per
-    // https://stackoverflow.com/questions/53922898/nuxt-js-client-fails-in-production-but-works-during-development
-    babel: {
-      plugins: ['dynamic-import-node']
-    },
     /*
     ** Run ESLint on save
     */
