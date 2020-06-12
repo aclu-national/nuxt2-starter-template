@@ -49,6 +49,13 @@ module.exports = {
       // { hid: 'canonical', rel: 'canonical', href: canonicalUrl }
     ]
   },
+  script: [
+    {
+      src: isProd
+        ? 'https://cdn-pci.optimizely.com/js/16943591923.js'
+        : 'https://cdn-pci.optimizely.com/js/16933484084.js'
+    },
+  }
   env: {
     isDev: isDev,
     isProd: isProd,
@@ -64,12 +71,10 @@ module.exports = {
   /*
   ** Plugins
   */
-  plugins: [{ src: '~plugins/aclu-vue-library', ssr: true }],
   plugins: [
-    { src: '~plugins/aclu-vue-library', ssr: true },
-    { src: '~plugins/heap', ssr: false },
-    { src: '~plugins/cookies', mode: 'client' },
-    { src: '~plugins/optimizely', ssr: false }
+    { src: '~plugins/aclu-vue-library', mode: 'server' },
+    { src: '~plugins/heap', mode: 'client' },
+    { src: '~plugins/cookies', mode: 'client' }
   ],
   /*
   ** Modules
