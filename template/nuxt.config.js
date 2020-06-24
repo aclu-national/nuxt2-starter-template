@@ -56,7 +56,7 @@ module.exports = {
       },
       {
         src: isProd
-          ? 'https://assets.gospringboard.io/v1/rmst.js?brand_url=rms.gospringboard.io&app_id=2mRuFmRmedwt'
+          ? 'https://assets.gospringboard.io/v1/rmst.js?brand_url=rms.gospringboard.io&app_id=WtUEvY8HhKU5'
           : 'https://assets.gospringboard.io/v1/rmst.js?brand_url=rms-staging.gospringboard.io&app_id=2mRuFmRmedwt',
         async: true,
         id: 'springboard-jssdk'
