@@ -1,6 +1,12 @@
 @import 'assets/scss/variables.scss';
 @import '~bulma/sass/utilities/mixins';
 
+// Workaround for 'undefined variable' error when importing bulma mixins
+// https://github.com/jgthms/bulma/issues/2773
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/derived-variables";
+
 // MIXINS
 @mixin font-family-compressed () {
   font-family: $aclu-sans-compressed;
