@@ -47,15 +47,22 @@ module.exports = {
         sizes: '183x183'
       }
       // { hid: 'canonical', rel: 'canonical', href: canonicalUrl }
+    ],
+    script: [
+      {
+        src: isProd
+          ? 'https://cdn-pci.optimizely.com/js/16943591923.js'
+          : 'https://cdn-pci.optimizely.com/js/16933484084.js'
+      },
+      {
+        src: isProd
+          ? 'https://assets.gospringboard.io/v1/rmst.js?brand_url=rms.gospringboard.io&app_id=WtUEvY8HhKU5'
+          : 'https://assets.gospringboard.io/v1/rmst.js?brand_url=rms-staging.gospringboard.io&app_id=2mRuFmRmedwt',
+        async: true,
+        id: 'springboard-jssdk'
+      }
     ]
   },
-  script: [
-    {
-      src: isProd
-        ? 'https://cdn-pci.optimizely.com/js/16943591923.js'
-        : 'https://cdn-pci.optimizely.com/js/16933484084.js'
-    },
-  }
   env: {
     isDev: isDev,
     isProd: isProd,
