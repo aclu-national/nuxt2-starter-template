@@ -81,7 +81,8 @@ module.exports = {
   plugins: [
     { src: '~plugins/aclu-vue-library', mode: 'server' },
     { src: '~plugins/heap', mode: 'client' },
-    { src: '~plugins/cookies', mode: 'client' }
+    { src: '~plugins/cookies', mode: 'client' },
+    { src: '~plugins/tags', mode: 'client' },
   ],
   /*
   ** Modules
