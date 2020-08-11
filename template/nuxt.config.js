@@ -97,7 +97,7 @@ module.exports = {
   ** CSS
   */
   css: [
-    'aclu-vue-library/dist/aclu-vue-library.css',
+    '@aclu-national/aclu-vue-library/dist/aclu-vue-library.css',
     { src: 'assets/scss/bulma-overrides.scss', lang: 'scss' },
     { src: 'assets/scss/main.scss', lang: 'scss' }
   ],
@@ -107,7 +107,7 @@ module.exports = {
   purgeCSS: {
     enabled: true,
     paths: [
-      'node_modules/aclu-vue-library/src/components/**/*.vue','node_modules/aclu-vue-library/src/components/**/*.js'
+      'node_modules/@aclu-national/aclu-vue-library/src/components/**/*.vue','node_modules/@aclu-national/aclu-vue-library/src/components/**/*.js'
     ]
 
   },
