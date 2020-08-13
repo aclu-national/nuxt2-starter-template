@@ -38,13 +38,13 @@ module.exports = {
       { hid: 'robots', name: 'robots', content: robotPolicy }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: `https://www.aclu.org/shared/images/favicons/favicon-16x16.png`, sizes: '16x16' },
-      { rel: 'icon', type: 'image/png', href: `https://www.aclu.org/shared/images/favicons/favicon-32x32.png`, sizes: '32x32' },
-      { rel: 'icon', type: 'image/png', href: `https://www.aclu.org/shared/images/favicons/android-chrome-192x192.png`, sizes: '192x192' },
+      { rel: 'icon', type: 'image/png', href: 'https://www.aclu.org/shared/images/favicons/favicon-16x16.png', sizes: '16x16' },
+      { rel: 'icon', type: 'image/png', href: 'https://www.aclu.org/shared/images/favicons/favicon-32x32.png', sizes: '32x32' },
+      { rel: 'icon', type: 'image/png', href: 'https://www.aclu.org/shared/images/favicons/android-chrome-192x192.png', sizes: '192x192' },
       {
         rel: 'apple-touch-icon',
         type: 'image/png',
-        href: `https://www.aclu.org/shared/images/favicons/apple-touch-icon.png`,
+        href: 'https://www.aclu.org/shared/images/favicons/apple-touch-icon.png',
         sizes: '183x183'
       },
       // { hid: 'canonical', rel: 'canonical', href: canonicalUrl }
