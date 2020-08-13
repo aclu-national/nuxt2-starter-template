@@ -38,14 +38,15 @@ module.exports = {
       { hid: 'robots', name: 'robots', content: robotPolicy }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: 'https://static.aclu.org/images/favicon/favicon-16x16.png', sizes: '16x16' },
-      { rel: 'icon', type: 'image/png', href: 'https://static.aclu.org/images/favicon/favicon-32x32.png', sizes: '32x32' },
+      { rel: 'icon', type: 'image/png', href: `https://www.aclu.org/shared/images/favicons/favicon-16x16.png`, sizes: '16x16' },
+      { rel: 'icon', type: 'image/png', href: `https://www.aclu.org/shared/images/favicons/favicon-32x32.png`, sizes: '32x32' },
+      { rel: 'icon', type: 'image/png', href: `https://www.aclu.org/shared/images/favicons/android-chrome-192x192.png`, sizes: '192x192' },
       {
         rel: 'apple-touch-icon',
         type: 'image/png',
-        href: 'https://static.aclu.org/images/favicon/apple-touch-icon.png',
+        href: `https://www.aclu.org/shared/images/favicons/apple-touch-icon.png`,
         sizes: '183x183'
-      }
+      },
       // { hid: 'canonical', rel: 'canonical', href: canonicalUrl }
     ],
     script: [
@@ -60,6 +61,14 @@ module.exports = {
           : 'https://assets.gospringboard.io/v1/rmst.js?brand_url=rms-staging.gospringboard.io&app_id=2mRuFmRmedwt',
         async: true,
         id: 'springboard-jssdk'
+      },
+      {
+        src: 'https://www.aclu.org/shared/js/aclu-cookies.js'
+      },
+      {
+        src: isProd
+          ? 'https://www.aclu.org/shared/js/aclu-heap-production.js'
+          : 'https://www.aclu.org/shared/js/aclu-heap-staging.js'
       }
     ]
   },
@@ -79,9 +88,7 @@ module.exports = {
   ** Plugins
   */
   plugins: [
-    { src: '~plugins/aclu-vue-library' },
-    { src: '~plugins/heap', mode: 'client' },
-    { src: '~plugins/cookies', mode: 'client' }
+    { src: '~plugins/aclu-vue-library' }
   ],
   /*
   ** Modules
