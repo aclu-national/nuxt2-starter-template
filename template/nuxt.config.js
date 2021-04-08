@@ -105,8 +105,8 @@ module.exports = {
   */
   css: [
     '@aclu-national/aclu-vue-library/dist/aclu-vue-library.css',
-    { src: 'assets/scss/bulma-overrides.scss', lang: 'scss' },
-    { src: 'assets/scss/main.scss', lang: 'scss' }
+    'assets/scss/bulma-overrides.scss',
+    'assets/scss/main.scss'
   ],
   /*
   ** PurgeCSS config
