@@ -12,9 +12,13 @@ Includes:
 
 ## Prerequisites
 
-Make sure to have a node version between `node 8.0-10` and `npm 5.0+` installed
+Node version between v10 ~ v12. If you are using NVM for Node version control, you can set up your Node version as follows:
 
-Note: If you have a node version greater than ten, use nvm (https://github.com/nvm-sh/nvm) to install a lesser version of node (>nvm install 10). Then install node-gyp (https://github.com/nodejs/node-gyp) with the older version. Otherwise you will run into errors (error prepareGitDep) when installing the dependencies.
+```bash
+# To install and use node v12:
+$ nvm install 12
+$ nvm use 12
+```
 
 ## Installation
 
@@ -41,15 +45,13 @@ $ vue init aclu-national/nuxt2-starter-template my-project
 $ cd my-project
 ```
 
-2. Update the personal access token for `aclu-vue-library` (see devDependencies in `package.json`)
-
-3. Install dependencies
+2. Install dependencies
 
 ``` bash
 $ npm install # Or yarn install
 ```
 
-4. Spin up the development server
+3. Spin up the development server
 
 ``` bash
 $ npm run dev
