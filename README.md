@@ -12,9 +12,10 @@ Includes:
 
 ## Prerequisites
 
-Node v12. If you are using NVM for Node version control, you can set up your Node version as follows:
+Node version between v10 ~ v12. If you are using NVM for Node version control, you can set up your Node version as follows:
 
 ```bash
+# To install and use node v12:
 $ nvm install 12
 $ nvm use 12
 ```
